@@ -20,6 +20,7 @@ export default async function RevenueChart() {
   }
 
   return (
+    // I don’t see any difference with or without w-full.
     <div className='w-full md:col-span-4'>
       <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>Recent Revenue</h2>
 
@@ -37,6 +38,7 @@ export default async function RevenueChart() {
           {revenue.map((month) => (
             <div key={month.month} className='flex flex-col items-center gap-2'>
               <div
+                // Here, w-full is important.
                 className='w-full rounded-md bg-blue-300'
                 style={{
                   height: `${(chartHeight / topLabel) * month.revenue}px`,

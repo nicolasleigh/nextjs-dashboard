@@ -10,6 +10,7 @@ export default async function LatestInvoices() {
   return (
     <div className='flex w-full flex-col md:col-span-4'>
       <h2 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>Latest Invoices</h2>
+      {/* I don't see any difference with or without `grow` */}
       <div className='flex grow flex-col justify-between rounded-xl bg-gray-50 p-4'>
         <div className='bg-white px-6'>
           {latestInvoices.map((invoice, i) => {
@@ -28,6 +29,7 @@ export default async function LatestInvoices() {
                     width={32}
                     height={32}
                   />
+                  {/* `min-w-0` is essential for `truncate` to work properly. https://medium.com/@pascalokereke18/why-i-use-min-width-0-d8d067aa1a1d */}
                   <div className='min-w-0'>
                     <p className='truncate text-sm font-semibold md:text-base'>{invoice.name}</p>
                     <p className='hidden text-sm text-gray-500 sm:block'>{invoice.email}</p>
