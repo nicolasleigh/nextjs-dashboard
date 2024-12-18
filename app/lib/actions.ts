@@ -107,6 +107,10 @@ export async function authenticate(prevState: string | undefined, formData: Form
     await signIn("credentials", formData);
   } catch (error) {
     if (error instanceof AuthError) {
+      // console.log("error.cause: -------------------------------------", error.cause);
+      // console.log("error.message: -------------------------------------", error.message);
+      // console.log("error.name: -------------------------------------", error.name);
+      // console.log("error.type: -------------------------------------", error.type);
       switch (error.type) {
         case "CredentialsSignin":
           return "Invalid credentials.";

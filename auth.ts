@@ -16,10 +16,12 @@ async function getUser(email: string): Promise<User | undefined> {
   }
 }
 
+// https://authjs.dev/getting-started/authentication/credentials
 export const { auth, signIn, signOut } = NextAuth({
   ...authConfig,
   providers: [
     Credentials({
+      // authorize: async (credentials) => {
       async authorize(credentials) {
         const parsedCredentials = z
           .object({ email: z.string().email(), password: z.string().min(6) })

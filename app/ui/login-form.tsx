@@ -19,6 +19,7 @@ export default function LoginForm() {
               Email
             </label>
             <div className='relative'>
+              {/* Styling based on sibling state (peer-{modifier}): https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-sibling-state */}
               <input
                 className='peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500'
                 id='email'
@@ -27,6 +28,7 @@ export default function LoginForm() {
                 placeholder='Enter your email address'
                 required
               />
+              {/* Pointer Events: https://tailwindcss.com/docs/pointer-events */}
               <AtSymbolIcon className='pointer-events-none absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900' />
             </div>
           </div>
@@ -36,7 +38,7 @@ export default function LoginForm() {
             </label>
             <div className='relative'>
               <input
-                className='peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500'
+                className='peer block w-full rounded-md border border-gray-200 py-[9px] pl-10 text-sm placeholder:text-gray-500'
                 id='password'
                 type='password'
                 name='password'
@@ -48,8 +50,9 @@ export default function LoginForm() {
             </div>
           </div>
         </div>
-        <Button className='mt-4 w-full' aria-disabled={isPending}>
-          Log in <ArrowRightIcon className='ml-auto h-5 w-5 text-gray-50' />
+        <Button className='mt-4 w-full' disabled={isPending}>
+          Log in
+          <ArrowRightIcon className='ml-auto h-5 w-5 text-gray-50' />
         </Button>
         <div className='flex h-8 items-end space-x-1' aria-live='polite' aria-atomic='true'>
           {errorMessage && (

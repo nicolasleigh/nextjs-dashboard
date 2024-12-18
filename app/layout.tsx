@@ -8,6 +8,7 @@ import { inter } from "@/app/ui/fonts";
 //   metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
 // };
 
+// https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadata-fields
 export const metadata: Metadata = {
   title: {
     template: "%s | Acme Dashboard",
